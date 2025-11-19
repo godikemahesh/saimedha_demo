@@ -51,7 +51,7 @@ embedding_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 # -------------------------
 # Groq Client
 # -------------------------
-client = Groq(api_key=)
+client = Groq(api_key=st.secrets["secret"]["api"])
 
 SYSTEM_PROMPT = """
 You are a video understanding assistant for ecet exam.
@@ -148,4 +148,5 @@ with col2:
 
         # Save bot message
         st.session_state.messages.append({"role": "assistant", "content": bot_reply})
+
         st.rerun()
