@@ -1,6 +1,6 @@
 faiss-cpu
 streamlit
-json
-sentence_transformers
-groq 
-base64
+sentence-transformers
+groq
+requests
+
