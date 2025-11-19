@@ -4,7 +4,7 @@ import faiss
 from sentence_transformers import SentenceTransformer
 from groq import Groq
 import base64
-logo_path = r"privexa_logo.png"
+logo_path = r"saimedha_demo_app/privexa_logo.png"
 
 base64_logo = base64.b64encode(open(logo_path, "rb").read()).decode()
 
@@ -41,10 +41,10 @@ def download_video_if_not_exists(url, save_path="video.mp4"):
 # -------------------------
 # Load RAG Data (Chunks + FAISS)
 # -------------------------
-with open("sai_chunks.json", "r", encoding="utf-8") as f:
+with open("saimedha_demo_app/sai_chunks.json", "r", encoding="utf-8") as f:
     chunks = json.load(f)
 
-index = faiss.read_index("sai_embeddings.index")
+index = faiss.read_index("saimedha_demo_app/sai_embeddings.index")
 
 embedding_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
@@ -150,3 +150,4 @@ with col2:
         st.session_state.messages.append({"role": "assistant", "content": bot_reply})
 
         st.rerun()
+
